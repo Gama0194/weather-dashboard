@@ -14,10 +14,8 @@ function getWeather(city) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // Handle current weather data
             const currentWeather = document.getElementById('currentWeather');
             currentWeather.innerHTML = ''; // Clear previous data
-            // Add code to display current weather information
             const cityName = document.createElement('h2');
             cityName.textContent = data.name;
             currentWeather.appendChild(cityName);
@@ -45,10 +43,10 @@ function getForecast(lat, lon) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // Handle 5-day forecast data
+            
             const forecastWeather = document.getElementById('forecastWeather');
-            forecastWeather.innerHTML = ''; // Clear previous data
-            // Add code to display 5-day forecast information
+            forecastWeather.innerHTML = ''; 
+         
             for (let i = 1; i < 6; i++) {
                 const forecastItem = document.createElement('div');
                 const date = new Date(data.daily[i].dt * 1000);
@@ -67,7 +65,7 @@ function getForecast(lat, lon) {
 
 
 function addToSearchHistory(city) {
-    // Add the city to the search history
+    
     const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
     if (!searchHistory.includes(city)) {
         searchHistory.push(city);
@@ -90,14 +88,12 @@ function displaySearchHistory() {
     });
 }
 
-// Display search history on page load
 displaySearchHistory();
 
 function storeData(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
-// Retrieving data from localStorage
 function getData(key) {
     const data = localStorage.getItem(key);
     return data ? JSON.parse(data) : [];

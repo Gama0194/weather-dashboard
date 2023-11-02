@@ -24,6 +24,6 @@ THEN I am again presented with current and future conditions for that city
 
 ## Deployment Links
 ```
-GitHub Repo:
-Deployed Site:
+GitHub Repo: https://github.com/Gama0194/weather-dashboard
+Deployed Site: https://gama0194.github.io/weather-dashboard
 ```
